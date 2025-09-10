@@ -1,6 +1,6 @@
-import fastify from "fastify"
 import cookie from "@fastify/cookie"
-import { knex } from "./database"
+import fastify from "fastify"
+
 import { env } from "./env"
 import { transactionsRoutes } from "./routes/transactions"
 

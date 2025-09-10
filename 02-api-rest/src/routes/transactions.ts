@@ -1,6 +1,8 @@
-import { FastifyInstance } from "fastify"
-import { knex } from "../database"
+import type { FastifyInstance } from "fastify"
+
 import crypto from "node:crypto"
+
+import { knex } from "../database"
 import {
   createTransactionSchema,
   getTransactionParamsSchema
@@ -13,7 +15,7 @@ export async function transactionsRoutes(app: FastifyInstance) {
     return { transactions }
   })
 
-  app.get("/:id", async (request) => {
+  app.get("/:id", async request => {
     const { id } = getTransactionParamsSchema.parse(request.params)
 
     const transaction = await knex("transactions").where("id", id).first()
