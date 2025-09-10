@@ -57,5 +57,5 @@ export default antfu({
     "react-hooks-extra/no-direct-set-state-in-use-effect": ["off"]
   },
 
-  ignores: ["tsconfig.json"]
+  ignores: ["tsconfig.json", "src/@types"]
 })

@@ -1,5 +1,7 @@
+import { Knex } from "knex"
+
 declare module "knex/types/tables" {
-  export type Tables = {
+  export interface Tables {
     transactions: {
       id: string
       title: string
