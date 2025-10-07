@@ -10,6 +10,10 @@ import {
 } from "../schemas/transactions"
 
 export async function transactionsRoutes(app: FastifyInstance) {
+  app.addHook("preHandler", async (request, response) => {
+    console.log(`[${request.method}] ${request.url}`)
+  })
+
   app.get(
     "/",
     {
